@@ -10,7 +10,7 @@ function showUfo(ufoSighting) {
     var table = d3.select("#ufo-table");
     var tbody = table.select("tbody");
     tbody.text("");
-    var trow = tbody.append("tr")
+
 
 // Iterate through each sighting and grab column data
     ufoSighting.forEach((ufo) => {
@@ -25,6 +25,7 @@ function showUfo(ufoSighting) {
 })
     // Can i do this instead of the above? Returns "obj obj"
     // ufoSighting.slice(0,7).forEach((ufo) => {
+    //     var trow = tbody.append("tr")
     //     trow.append("td").text(ufo);
     // })
 };
