@@ -14,20 +14,16 @@ function showUfo(ufoSighting) {
 
 // Iterate through each sighting and grab column data
     ufoSighting.forEach((ufo) => {
+
         var trow = tbody.append("tr");
-        trow.append("td").text(ufo.datetime);
-        trow.append("td").text(ufo.city);
-        trow.append("td").text(ufo.state);
-        trow.append("td").text(ufo.country);
-        trow.append("td").text(ufo.shape);
-        trow.append("td").text(ufo.durationMinutes);
-        trow.append("td").text(ufo.comments);
-})
-    // Can i do this instead of the above? Returns "obj obj"
-    // ufoSighting.slice(0,7).forEach((ufo) => {
-    //     var trow = tbody.append("tr")
-    //     trow.append("td").text(ufo);
-    // })
+        function create_cell(data){
+            trow.append('td').text(data)
+        }
+        Object.values(ufo).forEach((data)=>{
+            trow.append('td').text(data);
+        });
+        Object.values(ufo).forEach(create_cell);
+    })
 };
 
 // Display all data
